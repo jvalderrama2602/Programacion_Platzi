@@ -1,8 +1,5 @@
 function numero(){
 
-
-
-
 	var caja =document.getElementById("dibujo");
 	var lienzo=caja.getContext("2d");
 	var line=document.getElementById("num_lineas").value;
