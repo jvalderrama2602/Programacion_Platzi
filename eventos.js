@@ -5,34 +5,66 @@ var teclas={
 	RIGHT:39
 };
 
-console.log(teclas)
-document.addEventListener("keyup",dibujarTeclado);
+
+document.addEventListener("keydown",dibujarTeclado);
+
+var cuadro=document.getElementById("area");
+var papel=cuadro.getContext("2d");
+var x=100;
+var y=100;
+dibujar("red",x-1,y-1,x+1,y+1,papel)
+
+function dibujar(color,xinicial,yinicial,xfinal,yfinal,lienzo)
+	{
+
+		lienzo.beginPath();
+
+		lienzo.strokeStyle=color;
+
+		lienzo.moveTo(xinicial,yinicial);
+
+		lienzo.lineTo(xfinal,yfinal);
+
+		lienzo.stroke();
+
+		lienzo.closePath();
 
 
+
+	}
 
 
 function dibujarTeclado(evento)
 {
-	if(evento.keyCode==teclas.UP){
-		console.log("arriba")
 
+	var lineaColor="blue"
+	var movimiento=1
+
+
+
+	if(evento.keyCode==teclas.UP){
+		dibujar(lineaColor,x,y,x,y-movimiento,papel);
+		y=y-movimiento;
 
 	}
 
 	if(evento.keyCode==teclas.DOWN){
-		console.log("ABAJO")
-
+		
+		dibujar(lineaColor,x,y,x,y+movimiento,papel);
+		y=y+movimiento;
 
 	}
 
 	if(evento.keyCode==teclas.LEFT){
-		console.log("IZQUIERDA")
+		dibujar(lineaColor,x,y,x-movimiento,y,papel);
+		x=x-movimiento;
 
 
 	}
 
 	if(evento.keyCode==teclas.RIGHT){
-		console.log("DERECHO")
+		dibujar(lineaColor,x,y,x+movimiento,y,papel);
+		x=x+movimiento;
 
 
 	}
