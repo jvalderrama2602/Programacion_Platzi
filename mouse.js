@@ -1,18 +1,21 @@
-var teclas={
-	UP:38,
-	DOWN:40,
-	LEFT:37,
-	RIGHT:39
-};
+function movimiento(eventos) {
+    var x = eventos.clientX;
+    var y = eventos.clientY;
+    var cuadro=document.getElementById("areaMouse");
+	var papel=cuadro.getContext("2d");
 
-
-document.addEventListener("keydown",dibujarTeclado);
-
-var cuadro=document.getElementById("area");
-var papel=cuadro.getContext("2d");
-var x=100;
-var y=100;
-dibujar("red",x-1,y-1,x+1,y+1,papel)
+    dibujar("blue",x+1,y+1,x-1,y-1,papel);
+    /*var coor = "Coordenadas: (" + x + "," + y + ")";*/
+    /*document.getElementById("demo").innerHTML = coor;*/
+    /*console.log(coor);*/
+    /*console.log(dibujar)*/
+    var xy = document.getElementById("coordenadas");
+    xy.innerHTML=(y)
+}
+/*
+function limpiar() {
+    console.log("Salio");
+}*/
 
 function dibujar(color,xinicial,yinicial,xfinal,yfinal,lienzo)
 	{
@@ -33,7 +36,7 @@ function dibujar(color,xinicial,yinicial,xfinal,yfinal,lienzo)
 
 	}
 
-
+/*
 function dibujarTeclado(evento)
 {
 
@@ -69,13 +72,4 @@ function dibujarTeclado(evento)
 
 	}
 };
-
-document.addEventListener("onmousemove",moveMouse);
-
-function moveMouse(evento)
-{
-console.log(moveMouse)
-
-}
-
-
+*/
