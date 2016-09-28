@@ -1,14 +1,9 @@
 <!-- 
 		CURSO DE DOCUMENT OJECT MODEL
-		
 		OBJETOS 
-
 		NAVIGATOR : ACCEDE A ELEMENTOS DEL PC DESDE EL NAVEGADOR (GPS,WIFI,DISCO-DURO, ETC)
-
 		WINDOW : MANEJA LOS TABS O VENTANAS
-
 		DOCUMENT: MANEJA TODOS LOS ELEMENTOS DE LA PÁGINA WEB (DOCUMENT OBJECTO MODEL "DOM")
-
 		-->
 
 		
@@ -22,28 +17,32 @@
 <body>
 		<!-- 
 		OBJETOS 
-
 		NAVIGATOR : ACCEDE A ELEMENTOS DEL PC DESDE EL NAVEGADOR (GPS,WIFI,DISCO-DURO, ETC)
-
 		WINDOW : MANEJA LOS TABS O VENTANAS
-
 		DOCUMENT: MANEJA TODOS LOS ELEMENTOS DE LA PÁGINA WEB (DOCUMENT OBJECTO MODEL "DOM")
-
 		-->
-
 		<!-- Dibujando en Canvas -->
 
-
 		<h1>Dibujando Canvas</h1>
+
+		<h1>Inserte numero de linea</h1>
 		<canvas width="300" height="300" id="dibujo">
 			
 
 		</canvas>
+		<form>
+			<input type="text" name="num_lineas" id="num_lineas">
+			<input type="button" value="dibuja" onclick="numero()">
+
+
+		</form>
+		
 		<p>Fin del dibujo</p>
 
 	
 
 <!--<script src="js.js"></script>-->
 <script src="canvas.js"></script>
+<script src="eventos.js"></script>
 </body>
 </html>
